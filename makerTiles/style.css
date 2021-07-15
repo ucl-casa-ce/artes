@@ -1,0 +1,68 @@
+body {
+  margin: 40px;
+}
+
+#left{
+  margin: 40px 40px 40px 40px;
+  float:left; /* add this */
+}
+
+#right{
+  padding-left: 150px;
+}
+
+.colourPicker {
+  display: grid;
+  grid-template-columns: 25px 25px 25px 25px 25px 25px 25px;
+  grid-column-gap: 2px;
+  grid-template-rows: 25px;
+  margin-bottom: 30px;
+}
+.colour{
+  background-color: rgb(17, 255, 164);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: [col] 25px [col] 100px [col] 100px [col] 100px [col] 25px ;
+  grid-template-rows: [row] 25px [row] 100px [row] 100px [row] 100px [row] 25px;
+  grid-gap: 0px;
+  background-color: #fff;
+  color: #444;
+}
+
+.box {
+  background-color: #444;
+  font-size: 150%;
+  align-items: center;
+}
+
+
+
+.border {
+  background-color: rgb(0, 0, 0);
+}
+.top
+{
+  grid-column: col 1 / span 5  ;
+  grid-row: row 1 ;
+}
+
+.bottom
+{
+  grid-column: col 1 / span 5  ;
+  grid-row: row 5 ;
+}
+
+.left
+{
+  grid-column: col 1;
+  grid-row: row 1 / span 5 ;
+}
+
+.right
+{
+  grid-column: col 5;
+  grid-row: row 1 / span 5 ;
+}
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title>ARTES</title>
+    <!--AFrame version 1.2.0-->
+    <script src="./resources/js/libraries/aframe.min.js" type="text/javascript"></script>
+
+    <!--AR.js version 3.1.0-->
+    <script src="./resources/js/libraries/aframe-ar.js" type="text/javascript"></script>
+
+    <!--BeeBotte library 0.6 + Socket.io and JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" type="text/Javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./resources/js/libraries/bbt.min.js" type="text/javascript"></script>
+
+    <!--Custom script to create the marker and load the content-->
+    <script src="./resources/js/markerManager.js" type="text/javascript"></script>
+<!--plant.glb model "Low Poly Plant in a pot" (https://skfb.ly/o6u8M) by eucalyp555 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).-->
+</head>
+
+<body>
+
+    <a-scene embedded arjs='
+        debugUIEnabled: false; 
+        sourceType: webcam; 
+        patternRatio: 0.76; 
+        trackingMethod: best;' color-space="sRGB" vr-mode-ui="enabled: false"
+        renderer="colorManagement: true;  physicallyCorrectLights: true;">
+
+        <a-assets>
+            <a-asset-item id="plant" src="./resources/models/plant.glb" response-type="arraybuffer"></a-asset-item>
+        </a-assets>
+
+        <!--bbreader-->
+        <a-entity id='userCamera' camera markers_start_json>
+        </a-entity>
+
+
+        <!--
+        <a-marker id="marker1" type="pattern" url="resources/patt/patt_marker_1.patt" registerevents>
+            <a-box id="abox" position='0 0 0' scale="0.5 0.5 0.5" material='color: blue;'></a-box>
+            
+
+        </a-marker>
+        <a-marker id="marker1" type="pattern" url="resources/patt/patt_marker_2.patt" registerevents>
+            <a-entity id="plantRT" rotation="-0 0 0" position="0 0 0.2">
+                <a-entity id="screen" geometry="primitive: plane" position="0.4 0.3 0" scale="0.8 0.8 1"
+                    material="opacity: 1; transparent: false; color:#DA621E">
+                    <a-text timenow id="timenow" position="0 0.4 0.02" value="t" width="1.5" anchor="left"></a-text>
+
+                    <a-text id="moisture-text" position="-0.45 0.3 0.02" value="Moisture:" width="2" anchor="left"></a-text>
+                    <a-text id="temperature-text" position="-0.45 0.1 0.02" value="Temperature:" width="2" anchor="left"></a-text>
+                    <a-text id="humidity-text" position="-0.45 -0.1 0.02" value="Humidity:" width="2" anchor="left"></a-text>
+                    <a-text id="light-text" position="-0.45 -0.3 0.02" value="Light:" width="2" anchor="left"></a-text>
+                </a-entity>
+
+               
+
+
+                <a-entity id="modelplant" gltf-model="#plant" rotation="0 180 0" position="-0.2 0 0" scale="0.2 0.2 0.2"></a-entity>
+            </a-entity>
+        </a-marker>
+
+    -->
+
+
+    </a-scene>
+
+
+</body>
+
+</html>

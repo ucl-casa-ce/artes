@@ -1,0 +1,22 @@
+{
+  "name": "marker_ar_gen",
+  "version": "1.0.0",
+  "description": "Patt marker generator for ARJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ARjs",
+    "marker",
+    "server"
+  ],
+  "author": "Valerio ",
+  "license": "ISC",
+  "bin": {
+    "markergen": "./generator.js"
+  },
+  "dependencies": {
+    "canvas": "^2.8.0"
+  }
+}

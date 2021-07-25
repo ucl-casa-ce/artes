@@ -4,43 +4,47 @@ const saveImgButton= document.getElementById('saveMarker');
 
 function createGrid() {
     
+    //
     //a grid of colours to choose
-    const colourPicker = document.createElement("div")
-    colourPicker.className = "colourPicker";
-    colourPicker.id = "colourPickerDiv";
-    //document.body.appendChild(colourPicker);
-    document.getElementById('left').appendChild(colourPicker);
-
+    //
+    //const colourPicker = document.createElement("div")
+    //colourPicker.className = "colourPicker";
+    //colourPicker.id = "colourPickerDiv";
+    //document.getElementById('block').appendChild(colourPicker);
+    const colourPicker = document.getElementById('colourPickerDiv');
+    
     let colourArrayHEX=
     [
-        '#FFFFFF',
-        '#ED1D2A',
-        '#FFD500',
-        '#00843D',
-        '#FF8200',
-        '#1D83AF'
-
+        '#FFFFFF', //White
+        '#ED1D2A', //Bright Red
+        '#FFD500', //Bright Yellow
+        '#00843D', //Dark Green
+        '#FF8200', //Bright Orange
+        '#1D83AF', //Medium Azur
+        '#003865'  //Earh Blue
     ]
 
-    for (let col = 1; col < 7; col++) {
+    for (let col = 1; col < 8; col++) {
             const colourDiv = document.createElement("div")
             colourDiv.className = "colour";
             colourDiv.style.setProperty('grid-column',col)
             colourDiv.style.setProperty('background-color',colourArrayHEX[col-1])
-            colourDiv.style.setProperty('border','solid 1px black')
+            colourDiv.style.setProperty('border-style','solid')
+            colourDiv.style.setProperty('border-width','1px')
+            colourDiv.style.setProperty('border-color','black')
+
             colourPicker.appendChild(colourDiv);
     }
 
 
-
 //Grid of the marker
 
-    const wrapperDiv = document.createElement("div")
-    wrapperDiv.className = "wrapper";
-    wrapperDiv.id = "wrapperDiv";
-
+    //const wrapperDiv = document.createElement("div")
+    //wrapperDiv.className = "wrapper";
+    //wrapperDiv.id = "wrapperDiv";
     //document.body.appendChild(wrapperDiv);
-    document.getElementById('left').appendChild(wrapperDiv);
+    //document.getElementById('block').appendChild(wrapperDiv);
+    const wrapperDiv = document.getElementById('wrapperDiv');
     
     const borderTopDiv = document.createElement("div")
     borderTopDiv.className = "border top";
@@ -57,10 +61,6 @@ function createGrid() {
     const borderRightDiv = document.createElement("div")
     borderRightDiv.className = "border right";
     wrapperDiv.appendChild(borderRightDiv);
-    
-    
-    
-
 
     for (let col = 2; col < 5; col++) {
         for (let row = 2; row < 5; row++) {
@@ -70,12 +70,9 @@ function createGrid() {
             boxDiv.style.setProperty('background-color',colourArrayHEX[col-1])
             
             boxDiv.className = "box";
-            //boxDiv.className = "box col" + col + " row" + row;
             wrapperDiv.appendChild(boxDiv);
         }
     }
-
-    
 
 
 }
@@ -106,16 +103,23 @@ html2canvas(document.querySelector("#wrapperDiv"),
 //Get the value of the colour
 $(function () {
     $(".colour").click(function () {
+        //Store the value of the colour
         colourPicked=$(this).css('background-color');
+        
+        //change border of the selected box and of the other boxes
+        $(".colour").css('border-color','black');
+        $(".colour").css('border-width','1px');
 
-        console.log(colourPicked);
+        $(this).css('border-color','black');
+        $(this).css('border-style','dotted');
+        $(this).css('border-width','3px');
+        //console.log(colourPicked);
     });
 });
-
-
 
 $(function () {
     $(".box").click(function () {
         $(this).css('background-color', colourPicked);
+        
     });
 });

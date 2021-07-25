@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatiblrow6" content="IE=edgrow6">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARTES - MakerTiles</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./html2canvas.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    
-</head>
-<body>
-    <h1>ARTES - Augmented Reality Tiles for Environmental Sensing</h1>
-    <div id="container">
-   <div id="left"></div>
-   <div id="right"> 
-       <input id="saveMarker" class="w3-button w3-black w3-rounder" type="button" value="Save Marker">
-    </div>
-   
-  
+    <!--ToDo -- improve the lazy design-->
+    <link rel="stylesheet" href="./style.css">
+    <!--https://www.w3schools.com/w3css/4/w3.css-->
+    <link rel="stylesheet" href="./w3.css"> 
 
-   <script src="./app.js"></script>
-</div>
-   
-    
+</head>
+
+<body>
+
+    <div id="container" class="w3-container w3-center">
+        <div id="top">
+            <h1>ARTES - Augmented Reality Tiles for Environmental Sensing</h1>
+        </div>
+        <div id="block" class="w3-card-2 w3-container center " style="width: 60%;">
+
+            <header class="w3-container w3-blue w3-margin">
+                <h1>Pick a colour and make your marker</h1>
+            </header>
+            <h2 class="w3-left-align w3-wide w3-margin"></h2>
+            <div class="center">
+                <div id="colourPickerDiv" class="colourPicker "></div>
+            </div>
+            <div class="center w3-margin-top" style="padding-left: 30px;">
+                <div id="wrapperDiv" class="wrapper"></div>
+            </div>
+            <div id="button-container" class="center w3-margin-top w3-margin-bottom   ">
+                <input id="saveMarker" class="w3-button w3-blue w3-rounder w3-xlarge w3-dis" type="button"
+                    value="Save Marker">
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="./app.js"></script>
+    </div>
+
+
 </body>
+
 </html>

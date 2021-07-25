@@ -3,20 +3,20 @@ body {
 }
 
 #left{
-  margin: 40px 40px 40px 40px;
+ /* margin: 40px 40px 40px 40px;
   float:left; /* add this */
 }
 
 #right{
-  padding-left: 150px;
+  /*padding-left: 0px;*/
 }
 
 .colourPicker {
   display: grid;
-  grid-template-columns: 25px 25px 25px 25px 25px 25px 25px;
-  grid-column-gap: 2px;
-  grid-template-rows: 25px;
-  margin-bottom: 30px;
+  grid-template-columns: 50px 50px 50px 50px 50px 50px 50px;
+  grid-column-gap: 10px;
+  grid-template-rows: 50px;
+  
 }
 .colour{
   background-color: rgb(17, 255, 164);
@@ -36,6 +36,11 @@ body {
   font-size: 150%;
   align-items: center;
 }
+
+.center {
+  margin: auto;
+  width: 410px;
+  }
 
 
 

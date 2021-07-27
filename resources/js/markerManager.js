@@ -102,14 +102,14 @@ AFRAME.registerComponent('markers_start_json', {
                     sceneEl.appendChild(markerEl); //Add the marker to the scene
 
                     //Add text to each marker
-                    
+
                     let textEl = document.createElement('a-entity');
-                    textEl.setAttribute('id', 'text' + el.textContent);
-                    textEl.setAttribute('text', { color: 'red', align: 'center', value: el.channel, width: '6' });
-                    textEl.object3D.position.set(-0.5, 0.1, 0.5);
+                    textEl.setAttribute('id', 'text' + el.channel);
+                    textEl.setAttribute('text', { color: 'red', align: 'center', value: el.textContent, width: '6' });
+                    textEl.object3D.position.set(-0.0, 0.1, 0.5);
                     textEl.setAttribute('rotation', { x: -90, y: 0, z: 0 });
                     markerEl.appendChild(textEl); //add the text to the marker
-                    
+
 
                     //Create the Plant Model and Panel for the data
                     //The main container
@@ -206,13 +206,13 @@ AFRAME.registerComponent('markers_start_json', {
                         var soundEl = document.createElement('a-entity');
                         soundEl.setAttribute('id', 'sound' + i);
                         markerEl.setAttribute('sound-sample', { src: el.channel });
-                         markerEl.appendChild(soundEl); //add the sound to the marker
-                            }
+                        markerEl.appendChild(soundEl); //add the sound to the marker
+                    }
                     //OPTIONAL on Sound
 
-                    });
-                })
-            }
+                });
+            })
+    }
 });
 
 
@@ -271,9 +271,11 @@ AFRAME.registerComponent('registerevents', {
             //OPTIONAL on Sound
             //if(markerId.includes("sound"))
             //{
-            sound.volume(1);
-            sound.play(marker.components['sound-sample'].data.src);
-            console.log('play');
+            if (sound) {
+                sound.volume(1);
+                sound.play(marker.components['sound-sample'].data.src);
+                console.log('play');
+            }
             //}
             //OPTIONAL on Sound
         });

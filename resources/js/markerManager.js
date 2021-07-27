@@ -101,15 +101,15 @@ AFRAME.registerComponent('markers_start_json', {
                     markerEl.setAttribute('registerevents', '');
                     sceneEl.appendChild(markerEl); //Add the marker to the scene
 
-                    //Add text to each marker - DEBUG-
-                    /*
+                    //Add text to each marker
+                    
                     let textEl = document.createElement('a-entity');
-                    textEl.setAttribute('id', 'text' + el.channel);
+                    textEl.setAttribute('id', 'text' + el.textContent);
                     textEl.setAttribute('text', { color: 'red', align: 'center', value: el.channel, width: '6' });
-                    textEl.object3D.position.set(0.5, 0.1, -0.7);
+                    textEl.object3D.position.set(-0.5, 0.1, 0.5);
                     textEl.setAttribute('rotation', { x: -90, y: 0, z: 0 });
                     markerEl.appendChild(textEl); //add the text to the marker
-                    */
+                    
 
                     //Create the Plant Model and Panel for the data
                     //The main container
@@ -201,10 +201,18 @@ AFRAME.registerComponent('markers_start_json', {
                     modelplant.setAttribute('rotation', { x: 0, y: 180, z: 0 });
                     plantRT.appendChild(modelplant);
 
+                    //OPTIONAL adding sound with Howler
+                    if (el.type == 'sound') {
+                        var soundEl = document.createElement('a-entity');
+                        soundEl.setAttribute('id', 'sound' + i);
+                        markerEl.setAttribute('sound-sample', { src: el.channel });
+                         markerEl.appendChild(soundEl); //add the sound to the marker
+                            }
+                    //OPTIONAL on Sound
 
-                });
-            })
-    }
+                    });
+                })
+            }
 });
 
 
@@ -260,7 +268,14 @@ AFRAME.registerComponent('registerevents', {
                     modelplant.getObjectByName("pot_1").material.color.setHex(0xFF1D00);
                 }
             })
-
+            //OPTIONAL on Sound
+            //if(markerId.includes("sound"))
+            //{
+            sound.volume(1);
+            sound.play(marker.components['sound-sample'].data.src);
+            console.log('play');
+            //}
+            //OPTIONAL on Sound
         });
 
 
@@ -276,49 +291,3 @@ AFRAME.registerComponent('registerevents', {
         });
     },
 });
-
-
-
-
-
-
-/*
-//Detect marker found and lost
-AFRAME.registerComponent('registerevents', {
-    schema: {
-        soundid: { type: 'int', default: 0 },
-    },
-    init: function () {
-        const marker = this.el;
-
-        marker.addEventListener("markerFound", () => {
-            var markerId = marker.id;
-            console.log('Marker Found: ', markerId);
-            //console.log('The Data' + mqttData);
-
-            console.log(marker.querySelector('#moisture-text'));
-
-            marker.querySelector('#moisture-text').setAttribute('value', 'Moisture: ' + mqttDataMoisture);
-            marker.querySelector('#temperature-text').setAttribute('value', 'Temperature: ' + mqttDataTemperature);
-            marker.querySelector('#humidity-text').setAttribute('value', 'Humidity: ' + mqttDataHumidity);
-            marker.querySelector('#light-text').setAttribute('value', 'Light: ' + mqttDataLight);
-
-            //marker.querySelector('#timenow').setAttribute('value', currentTime);
-
-            if (markerId.includes("sound")) {
-                playSound(marker);
-            }
-        });
-
-        marker.addEventListener("markerLost", () => {
-            var markerId = marker.id;
-            console.log('Marker Lost: ', markerId);
-
-            if (markerId.includes("sound")) {
-                sound.pause(marker.components['registerevents'].data.soundid);
-            }
-
-        });
-    },
-});
-*/

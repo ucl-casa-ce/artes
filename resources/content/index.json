@@ -2,44 +2,50 @@
     "info": {
       "version": "1.0",
       "title": "ARTES",
-      "markers":6
+      "markers":7
     },
     "content": [
       {
         "markerName": "patt_marker_1",
         "channel": "one",
-        "type":"image",
-        "titleContent": ""
+        "type":"sound",
+        "textContent": "one"
       },
       {
         "markerName": "patt_marker_2",
         "channel": "two",
-        "type":"image",
-        "titleContent": ""
+        "type":"sound",
+        "textContent": "two"
       },
       {
         "markerName": "patt_marker_3",
         "channel": "three",
-        "type":"image",
-        "titleContent": ""
+        "type":"sound",
+        "textContent": "three"
       },
       {
         "markerName": "patt_marker_4",
         "channel": "four",
-        "type":"image",
-        "titleContent": ""
+        "type":"sound",
+        "textContent": "four"
       },
       {
         "markerName": "patt_marker_5",
         "channel": "five",
-        "type":"image",
-        "titleContent": ""
+        "type":"sound",
+        "textContent": "five"
       },
       {
         "markerName": "patt_marker_6",
         "channel": "six",
-        "type":"image",
-        "titleContent": ""
+        "type":"sound",
+        "textContent": "six"
+      },
+      {
+        "markerName": "patt_marker_7",
+        "channel": "seven",
+        "type":"sound",
+        "textContent": "seven"
       }
     ]
     

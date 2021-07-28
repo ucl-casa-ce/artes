@@ -40,7 +40,7 @@ AFRAME.registerComponent('bbreader', {
         function test() {
             console.log('Setup...');
 
-            var API_KEY = 'XKiJfFJw7BRdOFvIpd9Hmoei'; //be aware of what data you are sharing and publishing https://www.freecodecamp.org/news/how-to-securely-store-api-keys-4ff3ea19ebda/
+            var API_KEY = 'YOUR_BeeBotte_API'; //be aware of what data you are sharing and publishing https://www.freecodecamp.org/news/how-to-securely-store-api-keys-4ff3ea19ebda/
             bbt = new BBT(API_KEY);
 
             //There should be a better way to subscribe on multiple resources
@@ -235,7 +235,6 @@ AFRAME.registerComponent('registerevents', {
             bbt.subscribe({ channel: markerId, resource: 'moisture' }, function (msg) {
                 marker.querySelector('#moisture-text_' + markerId).setAttribute('value', 'Moisture: ' + msg.data + '%');
                 console.log(msg.data);
-                //msg.data=88;
 
                 //depending on the moisture value, change the colour of the leaf material
                 if (parseInt(msg.data) > 80) {

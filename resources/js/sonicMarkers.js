@@ -65,8 +65,8 @@ AFRAME.registerComponent("sample-sound-load", {
         sound = new Howl({
             mute: false,
             html5: notiOS,
-            src: [drumsSamples], //use the pair let above to change the sounds
-            sprite: drumsSprite,
+            src: [soundSamples], //use the pair let above to change the sounds
+            sprite: otherSprite,
 
             onload: function () {
                 console.log("LOADED");

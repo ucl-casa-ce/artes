@@ -9,31 +9,31 @@
         "markerName": "patt_marker_1",
         "channel": "one",
         "type":"sound",
-        "textContent": "one"
+        "textContent": "Milo"
       },
       {
         "markerName": "patt_marker_2",
         "channel": "two",
         "type":"sound",
-        "textContent": "two"
+        "textContent": "chantell"
       },
       {
         "markerName": "patt_marker_3",
         "channel": "three",
         "type":"sound",
-        "textContent": "three"
+        "textContent": "Alex"
       },
       {
         "markerName": "patt_marker_4",
         "channel": "four",
         "type":"sound",
-        "textContent": "four"
+        "textContent": "Aiden"
       },
       {
         "markerName": "patt_marker_5",
         "channel": "five",
         "type":"sound",
-        "textContent": "five"
+        "textContent": "Holden"
       },
       {
         "markerName": "patt_marker_6",

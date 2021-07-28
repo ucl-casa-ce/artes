@@ -235,7 +235,7 @@ AFRAME.registerComponent('registerevents', {
             bbt.subscribe({ channel: markerId, resource: 'moisture' }, function (msg) {
                 marker.querySelector('#moisture-text_' + markerId).setAttribute('value', 'Moisture: ' + msg.data + '%');
                 console.log(msg.data);
-                msg.data=88;
+                //msg.data=88;
 
                 //depending on the moisture value, change the colour of the leaf material
                 if (parseInt(msg.data) > 80) {

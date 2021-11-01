@@ -1,0 +1,21 @@
+{
+  "info": {
+    "version": "1.0",
+    "title": "WebAR-MultiMarkers",
+    "markers":2
+  },
+  "content": [
+    {
+      "markerName": "pattern-image1",
+      "topic": "ucxxxxx",
+      "type":"",
+      "textContent": "ucxxxxx"
+    },
+    {
+      "markerName": "pattern-image2",
+      "topic": "ucfnpaw",
+      "type":"",
+      "textContent": "ucfnpaw"
+    }
+  ]
+}

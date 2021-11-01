@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 //Command line Pattern file generator, based on https://github.com/AR-js-org/AR.js/tree/master/three.js/examples/marker-training
+//Online tool can be used as well https://ar-js-org.github.io/AR.js/three.js/examples/marker-training/examples/generator.html
 const fs = require('fs'), path = require('path'), Canvas = require('canvas');
 
 //Variables
@@ -81,7 +82,6 @@ THREEx.ArPatternFile.triggerDownload = function (patternFileString, fileName = '
     })
 }
 
-
 //Encoding
 let i = 0;
 // Make an async function that gets executed immediately
@@ -107,7 +107,7 @@ async function generatePatts(folder) {
                 console.log("'%s' is a directory.", innerImageURL);
 
             THREEx.ArPatternFile.encodeImageURL(innerImageURL, function onComplete(patternFileString) {
-                THREEx.ArPatternFile.triggerDownload(patternFileString, "patt_" + (imageName || "marker_") + i + ".patt")
+                THREEx.ArPatternFile.triggerDownload(patternFileString, "patt_" + (imageName || "marker_") + i + ".patt");
             })
 
         } // End for...of

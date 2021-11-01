@@ -8,44 +8,30 @@
 
     <title>ARTES</title>
     <!--AFrame version 1.2.0-->
-    <script src="./resources/js/libraries/aframe.min.js" type="text/javascript"></script>
-
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <!--AR.js version 3.1.0-->
-    <script src="./resources/js/libraries/aframe-ar.js" type="text/javascript"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/3.1.0/aframe/build/aframe-ar.js"></script>
+    <!--MQTT.js-->
+    <script type="text/javascript" src="https://unpkg.com/mqtt@2.18.3/dist/mqtt.min.js"></script>
 
-    <!--BeeBotte library 0.6 + Socket.io and JQuery-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" type="text/Javascript"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="./resources/js/libraries/bbt.min.js" type="text/javascript"></script>
-
-    <!--Custom script to create the marker and load the content-->
-    <script src="./resources/js/markerManager.js" type="text/javascript"></script>
-
-    <script src="./resources/js/libraries/howler.min.js" type="text/javascript"></script>
-    <script src="./resources/js/sonicMarkers.js" type="text/javascript"></script>
-    <!--plant.glb model "Low Poly Plant in a pot" (https://skfb.ly/o6u8M) by eucalyp555 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).-->
+    <script src="./resources/js/markerManager.js"></script>
+    <!--plant.gltf model "Low Poly Plant in a pot" (https://skfb.ly/o6u8M) by eucalyp555 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).-->
 </head>
 
 <body style="overflow: hidden;">
+    <a-scene embedded arjs="debugUIEnabled: false; sourceType: webcam; trackingMethod: best; patternRatio: 0.85"
+        color-space="sRGB" vr-mode-ui="enabled: false"
+        renderer="logarithmicDepthBuffer: false; physicallyCorrectLights: true; colorManagement: true; "
+        markers_start_json
+        timenow 
+        registerevents>
 
-    <a-scene embedded arjs='
-        debugUIEnabled: false; 
-        sourceType: webcam; 
-        patternRatio: 0.76; 
-        trackingMethod: best;' color-space="sRGB" vr-mode-ui="enabled: false"
-        renderer="colorManagement: true;  physicallyCorrectLights: true;">
+        <assets>
+            <a-asset-item id="plant_gltf" src="resources/models/plant/scene.gltf"></a-asset-item>
+            <a-asset-item id="display_glb" src="resources/models/display.glb"></a-asset-item>
+        </assets>
 
-        <a-assets>
-            <a-asset-item id="plant" src="./resources/models/plant.glb" response-type="arraybuffer"></a-asset-item>
-            <a-asset-item id="display" src="./resources/models/display.glb" response-type="arraybuffer"></a-asset-item>
-        </a-assets>
-
-        <!--Add this component to turn on sounds -> sample-sound-load-->
-        <a-entity id='userCamera' camera markers_start_json bbreader sample-sound-load listener-howler>
-        </a-entity>
-
-
+        <a-entity id='userCamera' camera> </a-entity>
 
     </a-scene>
 

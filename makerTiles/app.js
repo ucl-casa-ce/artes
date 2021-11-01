@@ -32,11 +32,11 @@ function createGrid() {
 
     //choose pattern and number of tiles - Supported 3x3 and 6x6
 
-    //let tilesPattern="3x3"
-    //let tilesNumber=3;
+    let tilesPattern="3x3"
+    let tilesNumber=3;
 
-    let tilesPattern = "6x6"
-    let tilesNumber = 6;
+    //let tilesPattern = "6x6"
+    //let tilesNumber = 6;
 
     //Grid of the marker
 

@@ -99,6 +99,10 @@ handler.addEventListener("markerFound", (event) => {
 
 //component to create the marker a-entity from the content/json
 AFRAME.registerComponent('markers_start_json', {
+  schema: { 
+    subtopics: {type: 'array'}
+  },
+    
     init: function () {
 
         console.log('Add markers to the scene');
@@ -120,6 +124,7 @@ AFRAME.registerComponent('markers_start_json', {
                     markerEl.setAttribute('type', 'pattern');
                     markerEl.setAttribute('url', markerURL);
                     markerEl.setAttribute('id', el.topic);
+                  //markerEl.setAttribute('subtopics',{subtopics: el.subtopics});
                    sceneEl.appendChild(markerEl); //Add the marker to the scene
 
                     //2. Add a text entity to each marker

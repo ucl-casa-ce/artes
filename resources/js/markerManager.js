@@ -66,6 +66,7 @@ handler.addEventListener("markerFound", (event) => {
 
            console.log(client);
        
+        //it is possible to update the Marker JSON and use this to subscribe to the topics
        client.subscribe('TOPIC/TO/SUBSCRIBE/moisture');
        client.subscribe('TOPIC/TO/SUBSCRIBE/temperature');
        client.subscribe('TOPIC/TO/SUBSCRIBE/humidity')

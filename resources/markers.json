@@ -2,20 +2,30 @@
   "info": {
     "version": "1.0",
     "title": "WebAR-MultiMarkers",
-    "markers":2
+    "markers": 2
   },
   "content": [
     {
       "markerName": "pattern-image1",
-      "topic": "ucxxxxx",
-      "type":"",
-      "textContent": "ucxxxxx"
+      "topic": "TOPIC TO SUBSCRIBE",
+      "subtopics": [
+        "temperature",
+        "humidity",
+        "moisture"
+      ],
+      "type": "",
+      "textContent": "SAMPLE TEXT"
     },
     {
       "markerName": "pattern-image2",
-      "topic": "ucfnpaw",
-      "type":"",
-      "textContent": "ucfnpaw"
+      "topic": "TOPIC TO SUBSCRIBE",
+      "subtopics (copy)": [
+        "temperature",
+        "humidity",
+        "moisture"
+      ],
+      "type": "",
+      "textContent": "SAMPLE TEXT"
     }
   ]
 }

@@ -29,7 +29,7 @@ handler.addEventListener("markerFound", (event) => {
     console.log('Marker Found: ', markerId);
 
     //Create a new client with ID of the marker
-   let client = mqtt.connect('ws://ADDRESS.BROKER.WEBSOCKET:8080',{clientId:event.target.id}); //if served under HTTPS, als Websocket need to be Secure --WSS connection 
+   let client = mqtt.connect('ws://ADDRESS.BROKER.WEBSOCKET:8080',{clientId:event.target.id}); //if served under HTTPS, Websocket need to be Secure as well -- change ws:// to wss://
 
    clients.push(client); //add the client to the Array
 
@@ -116,7 +116,7 @@ AFRAME.registerComponent('markers_start_json', {
                 console.log(json.content);
 
                 json.content.forEach(el => {
-                    //0. createa a string that contain the URL of the PATT file
+                    //0. create a string that contain the URL of the PATT file
                     let markerURL = './resources/patt/' + el.markerName + '.patt';
 
                     //1. Create and add a a-marker to scene
@@ -124,7 +124,7 @@ AFRAME.registerComponent('markers_start_json', {
                     markerEl.setAttribute('type', 'pattern');
                     markerEl.setAttribute('url', markerURL);
                     markerEl.setAttribute('id', el.topic);
-                  //markerEl.setAttribute('subtopics',{subtopics: el.subtopics});
+                  //markerEl.setAttribute('subtopics',{subtopics: el.subtopics}); //if the same root of the topic has multiple subtopics. E.g. /topic/weather/temperature, /topic/weather/wind, /topic/weather/humidity 
                    sceneEl.appendChild(markerEl); //Add the marker to the scene
 
                     //2. Add a text entity to each marker
@@ -177,7 +177,7 @@ AFRAME.registerComponent('markers_start_json', {
                     //7. Sensor Moisture
                     let moistureText = document.createElement('a-text');
                     moistureText.setAttribute('id', 'moisture-text_' + el.topic);
-                    moistureText.setAttribute('value', 'Moisture:');
+                    moistureText.setAttribute('value', 'Moisture:'); //just placeholder, the actual value is added from the registerevents component
                     moistureText.setAttribute('width', '4');
                     moistureText.setAttribute('anchor', 'left');
                     moistureText.object3D.position.set(-0.9, 0.5, 0.02);
@@ -186,7 +186,7 @@ AFRAME.registerComponent('markers_start_json', {
                     //8. Sensor Temperature
                     let temperatureText = document.createElement('a-text');
                     temperatureText.setAttribute('id', 'temperature-text_' + el.topic);
-                    temperatureText.setAttribute('value', 'Temperature:');
+                    temperatureText.setAttribute('value', 'Temperature:'); //just placeholder, the actual value is added from the registerevents component
                     temperatureText.setAttribute('width', '4');
                     temperatureText.setAttribute('anchor', 'left');
                     temperatureText.object3D.position.set(-0.9, 0.1, 0.02);
@@ -195,7 +195,7 @@ AFRAME.registerComponent('markers_start_json', {
                     //9. Sensor Humidity
                     let humidityText = document.createElement('a-text');
                     humidityText.setAttribute('id', 'humidity-text_' + el.topic);
-                    humidityText.setAttribute('value', 'Humidity:');
+                    humidityText.setAttribute('value', 'Humidity:'); //just placeholder, the actual value is added from the registerevents component
                     humidityText.setAttribute('width', '4');
                     humidityText.setAttribute('anchor', 'left');
                     humidityText.object3D.position.set(-0.9, -0.3, 0.02);

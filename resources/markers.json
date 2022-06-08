@@ -19,7 +19,7 @@
     {
       "markerName": "pattern-image2",
       "topic": "TOPIC TO SUBSCRIBE",
-      "subtopics (copy)": [
+      "subtopics": [
         "temperature",
         "humidity",
         "moisture"

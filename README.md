@@ -36,7 +36,7 @@ The final marker uses a 3 by 3 tiles pattern (a 6 by 6 tiles pattern has been te
 
 ## Encode the ARTile
 
-Once the physical pattern is built, we need to translate it into a digital one. The `makerTiles/tiles.html` is a static (and very simple) page used to digitise and download an image of the tile made with the square tiles. 
+Once the physical pattern is built, we need to translate it into a digital one. The `makerTiles/tiles.html` is a static (and very simple) page used to digitise and download an image of the tile made with the square lego elements (using [html2canvas](https://html2canvas.hertzen.com/)). 
 
 ![Maker tile website](./docs/MakerTiles.jpg)
 

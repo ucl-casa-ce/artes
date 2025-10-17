@@ -29,7 +29,7 @@ handler.addEventListener("markerFound", (event) => {
     console.log('Marker Found: ', markerId);
 
     //Create a new client with ID of the marker
-   let client = mqtt.connect('ws://ADDRESS.BROKER.WEBSOCKET:8080',{clientId:event.target.id}); //if served under HTTPS, Websocket need to be Secure as well -- change ws:// to wss://
+   let client = mqtt.connect('wss://ADDRESS.BROKER.WEBSOCKET:8080',{clientId:event.target.id}); //if served under HTTPS, Websocket need to be Secure as well -- change ws:// to wss://
 
    clients.push(client); //add the client to the Array
 

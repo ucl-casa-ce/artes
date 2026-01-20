@@ -16,7 +16,10 @@
   "bin": {
     "markergen": "./generator.js"
   },
+  "engines": {
+    "node": "^18.12.0 || >= 20.9.0"
+  },
   "dependencies": {
-    "canvas": "^2.8.0"
+    "canvas": "^3.2.1"
   }
 }

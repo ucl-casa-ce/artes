@@ -17,6 +17,6 @@
     "markergen": "./generator.js"
   },
   "dependencies": {
-    "canvas": "^2.8.0"
+    "canvas": "^3.2.1"
   }
 }
